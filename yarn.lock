@@ -3227,7 +3227,7 @@ expo-updates@~0.11.7:
 
 expo@^44.0.6:
   version "44.0.6"
-  resolved "https://registry.npmjs.org/expo/-/expo-44.0.6.tgz"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-44.0.6.tgz#5454f08abb07166e55eb55b5fc4d45b5ad416ff4"
   integrity sha512-iHnra6uD5kXZgdSUrvxZ3sLjg1FtgtA4p4uaSKVQ39IaMHJBngo8RKqFUJ+BF2kPDpBLJ251eLlhgYUlnAyuag==
   dependencies:
     "@babel/runtime" "^7.14.0"
