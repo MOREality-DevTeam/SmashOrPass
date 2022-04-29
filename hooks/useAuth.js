@@ -18,8 +18,8 @@ import { auth } from '../firebase';
 const AuthContext = createContext({});
 
 const config = {
-  androidClientId: '331806672983-mrkc86ondq067jshkm0m0urnfo4e28db.apps.googleusercontent.com',
-  iosClientId: '331806672983-vv1ughu95qs32ckes8it5k87mg3pfrg0.apps.googleusercontent.com',
+  androidClientId: '829561224169-j8cj48vvai6q325ht6t11q8f45jbdslj.apps.googleusercontent.com',
+  iosClientId: '829561224169-ss6nta8fs499hpbu0npovbvaf4fp2mjt.apps.googleusercontent.com',
   scopes: ['profile', 'email'],
   permissions: ['public_profile', 'email', 'gender', 'location'],
 };
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     signOut(auth)
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }
+  };
 
   const signInWithGoogle = async () => {
     setLoading(true);
@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
     })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
-  }
+  };
 
   const memoedValue = useMemo(() => ({
     user,
@@ -78,14 +78,14 @@ export const AuthProvider = ({ children }) => {
     error,
     signInWithGoogle,
     logout,
-  }), [user, loading, error])
+  }), [user, loading, error]);
 
   return (
     <AuthContext.Provider value={memoedValue}>
       {!loadingInitial && children}
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
 export default function useAuth() {
   return useContext(AuthContext);

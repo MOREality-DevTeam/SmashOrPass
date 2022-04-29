@@ -3,24 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>331806672983-vv1ughu95qs32ckes8it5k87mg3pfrg0.apps.googleusercontent.com</string>
+	<string>829561224169-ss6nta8fs499hpbu0npovbvaf4fp2mjt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.331806672983-vv1ughu95qs32ckes8it5k87mg3pfrg0</string>
+	<string>com.googleusercontent.apps.829561224169-ss6nta8fs499hpbu0npovbvaf4fp2mjt</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAXotnhdL-CQO-E4mv6ZlX_edfqYrngbNg</string>
+	<string>AIzaSyB7Cnc5I1aAXu_b0jDtqSS4lwxd7iDDOLU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>331806672983</string>
+	<string>829561224169</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
-
-
-	
 	<key>BUNDLE_ID</key>
 	<string>host.exp.exponent</string>
 	<key>PROJECT_ID</key>
-	<string>tinderclone-d347h</string>
+	<string>smashorpass-d347h</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tinderclone-d347h.appspot.com</string>
+	<string>smashorpass-d347h.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -32,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:331806672983:ios:85e0986a7ca7cb8b40fb12</string>
+	<string>1:829561224169:ios:1d70e75c2639182b692978</string>
 </dict>
 </plist>

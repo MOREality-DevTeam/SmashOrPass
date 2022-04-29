@@ -1,45 +1,45 @@
 {
   "project_info": {
-    "project_number": "331806672983",
-    "project_id": "tinderclone-d347h",
-    "storage_bucket": "tinderclone-d347h.appspot.com"
+    "project_number": "829561224169",
+    "project_id": "smashorpass-d347h",
+    "storage_bucket": "smashorpass-d347h.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:331806672983:android:ccebe1a4422aacfb40fb12",
+        "mobilesdk_app_id": "1:829561224169:android:515c8488f6392366692978",
         "android_client_info": {
           "package_name": "host.exp.exponent"
         }
       },
       "oauth_client": [
         {
-          "client_id": "331806672983-mrkc86ondq067jshkm0m0urnfo4e28db.apps.googleusercontent.com",
+          "client_id": "829561224169-j8cj48vvai6q325ht6t11q8f45jbdslj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "host.exp.exponent",
-            "certificate_hash": "d22f8711a959545edf4064903e33e9399667ab74"
+            "certificate_hash": "dae9dc439c3f2d48a278abd8134f4c637ed151cd"
           }
         },
         {
-          "client_id": "331806672983-m24lsibo84ph294k9uvben455ogs5mlf.apps.googleusercontent.com",
+          "client_id": "829561224169-nfbnidiv87k2u5iir605fnsu9rmul9bo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAnbm79NAdALVzJRgKJ2iA41Qs5XY6PEbg"
+          "current_key": "AIzaSyA6MYAmQNoK75OJW71KXI3BmI0e8Wsyfo0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "331806672983-m24lsibo84ph294k9uvben455ogs5mlf.apps.googleusercontent.com",
+              "client_id": "829561224169-nfbnidiv87k2u5iir605fnsu9rmul9bo.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "331806672983-vv1ughu95qs32ckes8it5k87mg3pfrg0.apps.googleusercontent.com",
+              "client_id": "829561224169-ss6nta8fs499hpbu0npovbvaf4fp2mjt.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "host.exp.exponent"

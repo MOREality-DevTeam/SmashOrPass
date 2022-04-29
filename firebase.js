@@ -8,12 +8,12 @@ import { getFirestore } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyARPCvcBBgXL65Njutlth9bGC5jtBDyz7E",
-  authDomain: "tinderclone-d347h.firebaseapp.com",
-  projectId: "tinderclone-d347h",
-  storageBucket: "tinderclone-d347h.appspot.com",
-  messagingSenderId: "331806672983",
-  appId: "1:331806672983:web:22fcdc57b856af9940fb12"
+  apiKey: "AIzaSyAzIiEeM1XmqoPuVHG0mKPxlqLM03x2Xlo",
+  authDomain: "smashorpass-d347h.firebaseapp.com",
+  projectId: "smashorpass-d347h",
+  storageBucket: "smashorpass-d347h.appspot.com",
+  messagingSenderId: "829561224169",
+  appId: "1:829561224169:web:57915005ed98bc61692978"
 };
 
 // Initialize Firebase
