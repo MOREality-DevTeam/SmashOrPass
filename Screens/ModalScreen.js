@@ -1,10 +1,11 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 import tw from "twrnc";
 import useAuth from "../hooks/useAuth";
 import { useNavigation } from "@react-navigation/native";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { AntDesign } from '@expo/vector-icons';
 
 const ModalScreen = () => {
   const { user } = useAuth();
@@ -12,6 +13,7 @@ const ModalScreen = () => {
   const [image, setImage] = useState(null);
   const [job, setJob] = useState(null);
   const [age, setAge] = useState(null);
+  const addImage = () => { };
 
   const incompleteForm = !image || !job || !age;
 
