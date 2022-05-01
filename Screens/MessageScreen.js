@@ -19,6 +19,7 @@ const MessageScreen = (props) => {
   //console.log(props.matchDetails);
   const { matchDetails } = params;
 
+  
   useEffect(
     () =>
       onSnapshot(

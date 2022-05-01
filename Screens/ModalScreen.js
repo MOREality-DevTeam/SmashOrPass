@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { AntDesign } from '@expo/vector-icons';
+import UploadImage from "../components/UploadImage";
 
 const ModalScreen = () => {
   const { user } = useAuth();
@@ -48,12 +49,17 @@ const ModalScreen = () => {
         Step 1: The Profile Pic
       </Text>
 
-      <TextInput
+      <View style={styles.container}>
+        <UploadImage />
+        <Text style={{ marginVertical: 20, fontSize: 16 }}>Welcome, FuzzySid</Text>
+      </View>
+
+      {/* <TextInput
         value={image}
         onChangeText={setImage}
         style={tw`text-center text-xl pb-2`}
         placeholder="Enter a Profile Pic URL"
-      />
+      /> */}
 
       <Text style={tw`text-center text-red-400 p-4 font-bold`}>
         Step 2: The Job
@@ -91,5 +97,14 @@ const ModalScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    padding:50,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+ });
 
 export default ModalScreen;
