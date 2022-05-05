@@ -1,12 +1,15 @@
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import tw from "twrnc";
 import useAuth from "../hooks/useAuth";
 import { useNavigation } from "@react-navigation/native";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { AntDesign } from '@expo/vector-icons';
-import UploadImage from "../components/UploadImage";
+//import UploadImage from "../components/UploadImage";
+import * as ImagePicker from "expo-image-picker";
+
+
 
 const ModalScreen = () => {
   const { user } = useAuth();
@@ -14,9 +17,53 @@ const ModalScreen = () => {
   const [image, setImage] = useState(null);
   const [job, setJob] = useState(null);
   const [age, setAge] = useState(null);
-  const addImage = () => { };
 
-  const incompleteForm = !image || !job || !age;
+  const incompleteForm = false; //!image || !job || !age;
+
+  const checkForCameraRollPermission = async () => {
+    const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
+
+    if (status !== "granted") {
+      alert("Please grant camera roll permissions inside your system's settings");
+    }
+    else {
+      console.log("Media permissions are granted");
+    }
+  };
+
+  useEffect(() => {
+    checkForCameraRollPermission();
+  }, []);
+
+  const addImage = async () => {
+    /* const { status } = await ImagePicker.getMediaLibraryPermissionAsync();
+
+    if (status !== "granted") {
+      alert("Please grant camera roll permissions inside your system's settings");
+    }
+    else {
+      console.log("Media permissions are granted");
+    } */
+    image = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: false,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(image);
+
+    setImage(image);
+
+    console.log(image);
+
+    /* if (!image.cancelled) {
+      setImage(image);
+    } */
+
+  };
+
+
 
   const updateUserProfile = () => {
     setDoc(doc(db, "users", user.uid), {
@@ -31,6 +78,7 @@ const ModalScreen = () => {
     }).catch((error) => {
       alert(error.message);
     });
+    console.log(image);
   };
 
   return (
@@ -50,7 +98,15 @@ const ModalScreen = () => {
       </Text>
 
       <View style={styles.container}>
-        <UploadImage />
+        <View style={imageUploaderStyles.container}>
+          {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+          <View style={imageUploaderStyles.uploadBtnContainer}>
+            <TouchableOpacity onPress={addImage} style={imageUploaderStyles.uploadBtn} >
+              <Text>{image ? 'Edit' : 'Upload'} Image</Text>
+              <AntDesign name="camera" size={20} color="black" />
+            </TouchableOpacity>
+          </View>
+        </View>
         <Text style={{ marginVertical: 20, fontSize: 16 }}>Welcome, FuzzySid</Text>
       </View>
 
@@ -100,11 +156,37 @@ const ModalScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding:50,
+    padding: 50,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
- });
+});
+
+const imageUploaderStyles = StyleSheet.create({
+  container: {
+    elevation: 2,
+    height: 200,
+    width: 200,
+    backgroundColor: '#efefef',
+    position: 'relative',
+    borderRadius: 999,
+    overflow: 'hidden',
+  },
+  uploadBtnContainer: {
+    opacity: 0.7,
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'lightgrey',
+    width: '100%',
+    height: '25%',
+  },
+  uploadBtn: {
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: 'center'
+  }
+});
 
 export default ModalScreen;
