@@ -20,30 +20,30 @@ const ModalScreen = () => {
 
   const incompleteForm = false; //!image || !job || !age;
 
-  const checkForCameraRollPermission = async () => {
-    const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
+  /*   const checkForCameraRollPermission = async () => {
+      const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
+  
+      if (status !== "granted") {
+        alert("Please grant camera roll permissions inside your system's settings");
+      }
+      else {
+        console.log("Media permissions are granted");
+      }
+    }; */
 
-    if (status !== "granted") {
-      alert("Please grant camera roll permissions inside your system's settings");
-    }
-    else {
-      console.log("Media permissions are granted");
-    }
-  };
-
-  useEffect(() => {
+  /* useEffect(() => {
     checkForCameraRollPermission();
-  }, []);
+  }, []); */
 
-  const addImage = async () => {
-    /* const { status } = await ImagePicker.getMediaLibraryPermissionAsync();
+  /* const addImage = async () => {
+    const { status } = await ImagePicker.getMediaLibraryPermissionAsync();
 
     if (status !== "granted") {
       alert("Please grant camera roll permissions inside your system's settings");
     }
     else {
       console.log("Media permissions are granted");
-    } */
+    }
     image = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: false,
@@ -57,11 +57,11 @@ const ModalScreen = () => {
 
     console.log(image);
 
-    /* if (!image.cancelled) {
+    if (!image.cancelled) {
       setImage(image);
-    } */
+    }
 
-  };
+  }; */
 
 
 
@@ -97,7 +97,7 @@ const ModalScreen = () => {
         Step 1: The Profile Pic
       </Text>
 
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <View style={imageUploaderStyles.container}>
           {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
           <View style={imageUploaderStyles.uploadBtnContainer}>
@@ -108,14 +108,14 @@ const ModalScreen = () => {
           </View>
         </View>
         <Text style={{ marginVertical: 20, fontSize: 16 }}>Welcome, FuzzySid</Text>
-      </View>
+      </View> */}
 
-      {/* <TextInput
+      <TextInput
         value={image}
         onChangeText={setImage}
         style={tw`text-center text-xl pb-2`}
         placeholder="Enter a Profile Pic URL"
-      /> */}
+      />
 
       <Text style={tw`text-center text-red-400 p-4 font-bold`}>
         Step 2: The Job
