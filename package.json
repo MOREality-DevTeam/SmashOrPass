@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.15.0",
+    "@react-native-firebase/app": "^14.9.2",
+    "@react-native-firebase/storage": "^14.9.2",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.1",
     "@types/react-native": "^0.67.6",
@@ -27,8 +29,10 @@
     "react-native": "^0.64.3",
     "react-native-deck-swiper": "^2.0.5",
     "react-native-image-picker": "^4.8.2",
+    "react-native-progress": "^5.0.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-svg": "12.1.1",
     "tailwind-rn": "^4.2.0",
     "twrnc": "^3.3.0"
   },
