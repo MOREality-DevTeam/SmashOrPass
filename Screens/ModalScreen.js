@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { Button, View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import tw from "twrnc";
 import useAuth from "../hooks/useAuth";
@@ -8,17 +8,23 @@ import { db } from "../firebase";
 import { AntDesign } from '@expo/vector-icons';
 //import UploadImage from "../components/UploadImage";
 import * as ImagePicker from "expo-image-picker";
-
+import { firebase } from "@react-native-firebase/storage";
+//import SimpleImagePicker from "../components/SimpleImagePicker";
 
 
 const ModalScreen = () => {
   const { user } = useAuth();
+
   const navigation = useNavigation();
-  const [image, setImage] = useState(null);
+  //const [image, setImage] = useState(null);
   const [job, setJob] = useState(null);
   const [age, setAge] = useState(null);
 
   const incompleteForm = false; //!image || !job || !age;
+
+  /* const task = firebase.storage()
+    .ref(filename)
+    .putFile(uploadUri); */
 
   /*   const checkForCameraRollPermission = async () => {
       const { status } = await ImagePicker.getMediaLibraryPermissionsAsync();
@@ -63,6 +69,24 @@ const ModalScreen = () => {
 
   }; */
 
+  /*   const pickImage = async () => {
+      // No permissions request is necessary for launching the image library
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+  
+      //console.log(result);
+  
+      if (!result.cancelled) {
+        setImage(result.uri);
+      }
+    }; */
+
+
+
 
 
   const updateUserProfile = () => {
@@ -78,7 +102,7 @@ const ModalScreen = () => {
     }).catch((error) => {
       alert(error.message);
     });
-    console.log(image);
+    //console.log('test', props);
   };
 
   return (
@@ -97,6 +121,11 @@ const ModalScreen = () => {
         Step 1: The Profile Pic
       </Text>
 
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button title="Pick an image from camera roll" onPress={pickImage} />
+        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+      </View>
+
       {/* <View style={styles.container}>
         <View style={imageUploaderStyles.container}>
           {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
@@ -110,12 +139,12 @@ const ModalScreen = () => {
         <Text style={{ marginVertical: 20, fontSize: 16 }}>Welcome, FuzzySid</Text>
       </View> */}
 
-      <TextInput
+      {/* <TextInput
         value={image}
         onChangeText={setImage}
         style={tw`text-center text-xl pb-2`}
         placeholder="Enter a Profile Pic URL"
-      />
+      /> */}
 
       <Text style={tw`text-center text-red-400 p-4 font-bold`}>
         Step 2: The Job
